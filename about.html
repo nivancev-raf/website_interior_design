@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Design</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/transparent_beli.png">
+    <link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?
+family=Poppins:wght@100;200;300;400;600;700&display=swap" 
+rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/
+fontawesome-free@5.15.4/css/fontawesome.min.css">
+</head>
+<body>
+<section class="sub-header">
+    <nav>
+        <a href="index.html"><img src="images/transparent_beli.png"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="index.html">POČETNA</a></li>
+                <li><a href="blog.html">USLUGE</a></li>
+                <li><a href="course.html">GALERIJA</a></li>
+                <li><a href="about.html">O NAMA</a></li>
+                <li><a href="contact.html">KONTAKT</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <!-- <h1>O NAMA</h1> -->
+</section>
+
+<!---- About Us Content ---->
+<section class="about-us reveal">
+    <div class="row">
+        <div class="about-col">
+            <h1>Detaljnije o nama</h1>
+            <p> "Max design" je firma koja se bavi opremanjem stanova vec dugi 
+                niz godina. Ukoliko ne znate ili niste sigurni kako da uklopite 
+                boje i celokupan raspored u vasem stanu, nalazite se na pravom mestu. 
+                <br><br>
+                Mi smo tu da vam pomognemo da napravite idealan enterijer za vas. 
+                Naš tim stručnjaka će raditi sa vama kako bi se razumeli vaši željeni stil i potrebe, 
+                a zatim će kreirati jedinstven dizajn koji će odgovarati vašem ukusu i budžetu.<br> <br>Korišćenjem 
+                visokokvalitetnih materijala, garancijom na naš rad i personalizovanim pristupom, mi smo tu da vam pružimo 
+                jedinstvenu i trajnu opremu enterijera.
+            </p>
+                <a href="course.html" class="hero-btn red-btn">Pogledaj slike projekata</a>
+        </div>
+        <div class="about-col">
+            <img src="images/aboutus.jpg" style="border: 1px solid black;">
+        </div> 
+    </div>
+</section>
+
+
+<!--- Footer --->
+
+<section class="footer reveal">
+    <p>Ne gubite vreme i kontaktirajte nas danas, i zajedno ćemo stvoriti stan koji će biti u potpunosti funkcionalan, 
+        udoban i estetski privlačan. <br>Zasigurno ćete biti oduševljeni konačnim rezultatom!</p>
+        <h4>KONTAKT</h4>
+        <ul class="list-unstyled">
+            <li>Email: maxdesign.doo@gmail.com</li>
+            <li>Telefon: +381 604455625</li>
+            <br>
+            <h4>Zapratite nas</h4>
+          </ul>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-twitter"></i> 
+        </div>
+        <p>Made with <i class="fa fa-heart-o"></i> by Dzoni</p>
+        <p class="text-center">Copyright &copy; 2023 Interior Design</p>
+</section>
+
+
+
+
+<!------ Java script for Toggle menu ------>
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+
+</script>
+
+<!-- js za reveal u toku skrolovanja -->
+<script>
+    window.addEventListener('scroll', reveal);
+
+    function reveal(){
+        var reveals = document.querySelectorAll('.reveal');
+
+        for (var i = 0; i < reveals.length; i++){
+            var windowheight = window.innerHeight;
+            var revealtop = reveals[i].getBoundingClientRect().top;
+            var revealpoint = 150;
+
+            if (revealtop < windowheight - revealpoint){
+                reveals[i].classList.add('active');
+            }else{
+                reveals[i].classList.remove('active');
+            }
+        }
+    }
+</script>
+</body> 
+</html>
