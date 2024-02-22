@@ -57,7 +57,7 @@ fontawesome-free@5.15.4/css/fontawesome.min.css">
         </div>
         <div class="contact-col">
             <h1>Pišite nam putem maila!</h1>
-            <form action="form-handler.php" method="post">
+            <form id="contactForm">
                 <input type="text" name="name" placeholder="Ime" required>
                 <input type="email" name="email" placeholder="E-mail" required>
                 <input type="text" name="subject" placeholder="Naslov" required>
@@ -124,5 +124,40 @@ fontawesome-free@5.15.4/css/fontawesome.min.css">
         }
     }
 </script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var formData = {
+            name: this.name.value,
+            email: this.email.value,
+            subject: this.subject.value,
+            message: this.message.value
+        };
+
+        fetch('http://localhost:8081/api/notifications/sendEmail', { // Replace with your Java backend endpoint
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            // Handle success here (e.g., showing a success message)
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            // Handle errors here (e.g., showing an error message)
+        });
+    });
+});
+
+</script>
+
 </body> 
 </html>
