@@ -24,8 +24,13 @@ public class EmailServiceImpl implements EmailService {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom("nivancev02@gmail.com");
         message.setTo(emailMessage.getEmail());
+//        message.setTo("nivancev02@gmail.com");
+//        System.out.println("email od:" + emailMessage.getEmail());
+//        message.setFrom(emailMessage.getEmail());
         message.setSubject(emailMessage.getSubject());
-        message.setText(emailMessage.getMessage());
+
+        String mailMessage = "Vasa poruka je uspešno poslata sa sledećim sadržajem: " + "\n" + "\n" + emailMessage.getMessage() + "\n" + "\n" + "Ocekujte odgovor u najkracem mogucem roku. Hvala!";
+        message.setText(mailMessage);
         mailSenderImpl.send(message);
     }
 }

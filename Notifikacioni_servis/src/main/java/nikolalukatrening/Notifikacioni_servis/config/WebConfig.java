@@ -10,7 +10,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/notifications/sendEmail") // Use the appropriate path pattern
+        registry.addMapping("/notifications/sendEmail") // Use the appropriate path pattern
                 .allowedOrigins("*")
                 .allowedMethods("POST", "GET", "OPTIONS", "DELETE")
                 .allowedHeaders("Content-Type", "Access-Control-Allow-Headers", "Authorization", "X-Requested-With")

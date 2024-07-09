@@ -5,7 +5,9 @@ import nikolalukatrening.Notifikacioni_servis.service.EmailService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -20,10 +22,12 @@ public class NotificationController {
 
     // post endpoint for sending email
     @PostMapping("/sendEmail")
-    public ResponseEntity<String> sendEmail(@RequestBody EmailMessageDto emailMessageDto) {
+    public ResponseEntity<Map<String, String>> sendEmail(@RequestBody EmailMessageDto emailMessageDto) {
         // send email
         emailService.sendEmail(emailMessageDto);
-        return ResponseEntity.ok("Email sent");
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Email sent");
+        return ResponseEntity.ok(response);
     }
 
 }
