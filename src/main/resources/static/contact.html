@@ -139,7 +139,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
             message: this.message.value
         };
 
-        fetch('http://localhost:8081/notifications/sendEmail', { // Replace with your Java backend endpoint
+        // fetch('http://localhost:8081/notifications/sendEmail', { // Replace with your Java backend endpoint
+        fetch('https://website-interior-design.onrender.com/notifications/sendEmail', { // Replace with your Java backend endpoint
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
