@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
     <title>Max Design</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/transparent_beli.png">
     <link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
@@ -83,12 +84,12 @@ fontawesome-free@5.15.4/css/fontawesome.min.css">
             <h4>Zapratite nas</h4>
           </ul>
         <div class="icons">
-            <i class="fa fa-facebook"></i>
-            <i class="fa fa-instagram"></i>
-            <i class="fa fa-twitter"></i> 
+            <!-- <i class="fa fa-facebook"></i> -->
+            <a href="https://www.instagram.com/maxdesigninteriors/" target="_blank"><i class="fa fa-instagram"></i></a>
+            <!-- <i class="fa fa-twitter"></i>  -->
         </div>
         <p>Made with <i class="fa fa-heart-o"></i> by Dzoni</p>
-        <p class="text-center">Copyright &copy; 2023 Interior Design</p>
+        <p class="text-center">Copyright &copy; 2024 Interior Design</p>
 </section>
 
 <!------ Java script for Toggle menu ------>
@@ -138,7 +139,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             message: this.message.value
         };
 
-        fetch('http://localhost:8081/api/notifications/sendEmail', { // Replace with your Java backend endpoint
+        fetch('http://localhost:8081/notifications/sendEmail', { // Replace with your Java backend endpoint
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -149,6 +150,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         .then(data => {
             console.log('Success:', data);
             // Handle success here (e.g., showing a success message)
+            // clear the form
+            this.reset(); 
+
+            // show a success message
+            alert('Email je uspešno poslat!');
         })
         .catch((error) => {
             console.error('Error:', error);

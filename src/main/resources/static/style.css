@@ -251,32 +251,30 @@ h3{
 
 
 /* NOVE SLIKE PROBA*/
-.campus{
+.campus {
     width: 70%;
     margin: auto;
     text-align: center;
     padding-top: 50px;
     scroll-behavior: smooth;
-    
 }
 
-
-.campus-col{
+.campus-col {
     margin: 0.5px 5px;
     flex-basis: 32%;
     border-radius: 10px;
     margin-bottom: 1px;
     position: relative;
     overflow: hidden;
-    
-   
 }
-.campus-col img{
+
+.campus-col img {
     transition: 0.5s;
     padding: 10px;
-    width: 300px;
+    width: 100%; /* Adjust width to fit container */
+    height: 250px; /* Set a fixed height for consistency */
+    object-fit: cover; /* Ensures images are scaled correctly */
     border-radius: 10px;
-
 }
 
 .campus-col img:hover {
@@ -285,8 +283,8 @@ h3{
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     z-index: 1;
     transition-duration: 0.5s;
-    
-  }
+}
+
 
 
 
@@ -413,6 +411,10 @@ h3{
 .fa fa-heart-o{
     /* color: #f44336; */
     color: #db9c44;
+}
+
+.icons i {
+    font-size: 24px; /* Adjust the size as needed */
 }
 
 /*-------- About Us PAGE ---------*/
